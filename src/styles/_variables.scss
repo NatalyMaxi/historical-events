@@ -20,7 +20,19 @@
   --transition-duration: 0.4s;
 
   --container-width: #{rem(1920)};
-  --container-padding-x: #{rem(160)};
+  --container-padding-x: 8.33%;
 
   --radius: #{rem(536)};
+
+  @include laptop {
+    --container-padding-x: 6%;
+  }
+
+  @include tablet {
+    --container-padding-x: #{rem(32)};
+  }
+
+  @include mobile {
+    --container-padding-x: #{rem(20)};
+  }
 }

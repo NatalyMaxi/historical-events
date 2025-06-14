@@ -15,6 +15,15 @@ module.exports = {
         ignoreAtRules: ['else'],
       },
     ],
+    'declaration-property-value-no-unknown': null,
   },
+  overrides: [
+    {
+      files: ['**/*.module.scss'],
+      rules: {
+        'selector-class-pattern': '^[a-z][a-zA-Z0-9]+$',
+      },
+    },
+  ],
   ignoreFiles: ['node_modules/**', 'build/**', 'dist/**'],
 };

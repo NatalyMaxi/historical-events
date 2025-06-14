@@ -1,0 +1,7 @@
+@use 'src/styles/helpers' as *;
+
+.line {
+  width: rem(5);
+  padding: 0.3em 0;
+  background: var(--gradient);
+}

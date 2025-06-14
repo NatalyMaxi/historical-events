@@ -1,0 +1,36 @@
+@use 'src/styles/helpers' as *;
+
+.button {
+  --size: #{rem(50)};
+
+  @include flex-center;
+  @include reset-button;
+
+  @include hover {
+    background-color: var(--color-light-bright);
+  }
+
+  border-radius: 50%;
+
+  &.nextArrow {
+    transform: rotate(180deg);
+  }
+
+  &.sliderControl {
+    --size: #{rem(40)};
+
+    background-color: var(--color-light-bright);
+  }
+
+  .icon {
+    width: var(--size);
+    height: var(--size);
+    stroke: var(--color-dark);
+  }
+}
+
+@include mobile {
+  .button {
+    --size: #{rem(25)};
+  }
+}
