@@ -22,14 +22,16 @@
   --container-width: #{rem(1920)};
   --container-padding-x: 8.33%;
 
-  --radius: #{rem(536)};
+  --diameter: #{rem(536)};
 
   @include laptop {
     --container-padding-x: 6%;
+    --diameter: #{rem(500)};
   }
 
   @include tablet {
     --container-padding-x: #{rem(32)};
+    --diameter: #{rem(536)};
   }
 
   @include mobile {

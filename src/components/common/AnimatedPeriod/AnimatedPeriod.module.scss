@@ -1,0 +1,16 @@
+@use 'src/styles/helpers' as *;
+
+.container {
+  @include fluid-text(200, 56);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.3em;
+  width: 52.08%;
+}
+
+@include mobile {
+  .container {
+    gap: rem(28);
+  }
+}

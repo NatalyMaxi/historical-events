@@ -27,3 +27,11 @@
     color: var(--accent-color-secondary);
   }
 }
+
+@include laptop {
+  .year {
+    &.large {
+      line-height: 100%;
+    }
+  }
+}

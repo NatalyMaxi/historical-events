@@ -13,13 +13,13 @@ interface IButtonProps {
   title?: string;
 }
 
-export const SwitchButton: React.FC<IButtonProps> = ({
+export const SwitchButton = ({
   isSliderControl = false,
   onClick,
   className,
   direction,
   title,
-}) => {
+}: IButtonProps) => {
   const isNext = direction === Direction.NEXT;
 
   return (

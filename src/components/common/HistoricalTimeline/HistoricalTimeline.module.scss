@@ -1,0 +1,110 @@
+@use 'src/styles/helpers' as *;
+
+.container {
+  $size: rem(536);
+
+  .wrapper {
+    @include fluid-text(200, 56);
+
+    position: relative;
+    left: rem(-1);
+
+    display: flex;
+    gap: rem(78);
+    align-items: center;
+  }
+
+  .yearsContainer {
+    position: absolute;
+    top: calc(43% - var(--line-height) / 2);
+    left: 15%;
+  }
+
+  .circleWrapper {
+    position: absolute;
+    top: calc(45% - var(--diameter) / 2);
+    left: calc(50% - var(--diameter) / 2);
+
+    width: $size;
+    height: $size;
+
+    .svgCircle {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .controls {
+    display: flex;
+    gap: rem(10);
+    margin-top: auto;
+
+    .button {
+      cursor: pointer;
+
+      padding: rem(8) rem(16);
+      border: rem(1) solid #ccc;
+      border-radius: rem(4);
+
+      font-weight: 600;
+
+      background-color: white;
+
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #eee;
+      }
+    }
+  }
+}
+
+@include laptop {
+  .container {
+    $size: rem(500);
+
+    .wrapper {
+      gap: rem(40);
+    }
+
+    .yearsContainer {
+      top: 29%;
+      left: 19%;
+    }
+
+    .circleWrapper {
+      top: calc(38% - var(--diameter) / 2);
+    }
+  }
+}
+
+@include tablet {
+  .container {
+    $size: rem(536);
+
+    .yearsContainer {
+      top: 33%;
+      left: 20%;
+    }
+  }
+}
+
+@include mobile {
+  .container {
+    .yearsContainer {
+      position: static;
+      padding: rem(56) 0 rem(57);
+      padding-block: rem(59) rem(70);
+      border-bottom: rem(1) solid #c7cdd9;
+    }
+
+    .line {
+      display: none;
+    }
+
+    .circleWrapper {
+      display: none;
+    }
+  }
+}

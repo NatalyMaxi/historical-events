@@ -1,0 +1,1 @@
+export { AnimatedPeriod } from './AnimatedPeriod';
