@@ -1,0 +1,29 @@
+@use 'sass:math';
+@use 'functions' as *;
+
+@mixin fluid-text($max: 20, $min: 14) {
+  font-size: fluid($max, $min);
+}
+
+@mixin flex-center($isInline: false) {
+  @if $isInline {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
+
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin reset-button {
+  padding: 0;
+  border: none;
+  color: inherit;
+  background-color: inherit;
+}

@@ -1,0 +1,27 @@
+@use 'src/styles/helpers' as *;
+
+body {
+  @include fluid-text(20, 14);
+
+  font-family: var(--font-family-base);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-dark);
+
+  background-color: var(--color-light-main);
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+:focus-visible {
+  outline: rem(1) solid var(--color-dark);
+  transition-duration: 0s;
+}

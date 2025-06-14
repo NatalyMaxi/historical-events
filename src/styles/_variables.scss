@@ -1,0 +1,26 @@
+@use 'helpers' as *;
+
+:root {
+  --color-light-main: #f4f5f9;
+  --color-light-bright: #fff;
+  --color-dark: #42567a;
+  --color-dark-opacity-10: #42567a1a;
+  --accent-color-primary: #3877ee;
+  --accent-color-secondary: #f178b6;
+
+  --border: #{rem(1)} solid var(--color-dark);
+  --border-opacity: #{rem(1)} solid var(--color-dark-opacity-10);
+  --shadow: 0 0 #{rem(15)} 0 #3877ee1a;
+  --gradient: linear-gradient(180deg, #3877ee -5%, #ef5da8 85%);
+
+  --font-family-base: 'PT Sans', sans-serif;
+  --font-family-additional: 'Bebas Neue', sans-serif;
+  --line-height: #{rem(160)};
+
+  --transition-duration: 0.4s;
+
+  --container-width: #{rem(1920)};
+  --container-padding-x: #{rem(160)};
+
+  --radius: #{rem(536)};
+}
