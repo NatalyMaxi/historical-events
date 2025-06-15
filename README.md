@@ -1,46 +1,108 @@
-# Getting Started with Create React App
+# 📜 Историческая временная шкала
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Этот проект был создан в рамках [тестового задания](https://docs.google.com/document/d/1Qy4MN7duYzm-Wr-rQ4TFApvUoxfuqGXdcyA8-vt5Dhg/edit?tab=t.0#heading=h.arjd18qpb9a9).  
+[Figma-дизайн](https://www.figma.com/design/YXCbNT4Jf9INk62BKTZw1z/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5?node-id=1-8&t=20gf5zAimqWC7RC7-0)
 
-## Available Scripts
+#### 🚀 Как запустить проект
 
-In the project directory, you can run:
+```bash
+# Клонирование репозитория
+git clone https://github.com/NatalyMaxi/historical-events
+cd historical-events
 
-### `yarn start`
+# Установка зависимостей
+npm install      # или
+yarn install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Запустить проект в режиме разработки
+npm start        # или
+yarn start
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Собрать production-версию
+npm run build    # или
+yarn build
 
-### `yarn test`
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Команда                 | Описание                                     |
+| ----------------------- | -------------------------------------------- |
+| `npm start`             | Запуск проекта в режиме разработки           |
+| `npm run build`         | Сборка production-версии                     |
+| `npm run lint`          | Проверка JavaScript/TypeScript-кода (ESLint) |
+| `npm run lint-fix`      | Автоисправление ошибок ESLint                |
+| `npm run stylelint`     | Проверка стилей (Stylelint)                  |
+| `npm run stylelint:fix` | Автоисправление ошибок Stylelint             |
+| `npm run format`        | Форматирование файлов через Prettier         |
 
-### `yarn build`
+#### ✨ Функциональные возможности
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Круговая временная шкала с равномерно расположенными точками событий.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Анимация поворота при переключении между временными отрезками.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Интерактивный выбор периода на круге (точка становится активной при клике).
 
-### `yarn eject`
+- Для каждого периода отображается список исторических событий в виде слайдера.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Возможность переключения между событиями внутри каждого периода.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- При смене периода — слайдер автоматически возвращается на первый слайд.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Дополнительный чекбокс "Добавить секцию", который позволяет добавить ещё один независимый блок с временной шкалой. Это удобный способ визуально проверить на демо-версии, что несколько таких секций могут сосуществовать и работать независимо друг от друга без необходимости разворачивать проект.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Выбор количества отображаемых периодов через select — дополнительная функциональность, позволяющая посмотреть поведение временной шкалы при разном количестве периодов. При этом точки на круге всегда равномерно распределены. Эту возможность также можно оценить на демо-версии без разворачивания проекта.
 
-## Learn More
+#### 📱 Адаптивность
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Проект адаптирован под:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+📱 мобильные устройства
+
+💻 планшеты
+
+🖥️ десктопы
+
+Используются единицы измерения rem, что позволяет приложению корректно адаптироваться при изменении масштаба или размера шрифта в браузере (например, в Google Chrome). Это улучшает доступность и гибкость интерфейса.
+
+#### 🛠️ Качество кода
+
+- В проекте настроены инструменты для автоматической проверки и форматирования кода:
+
+  - ESLint — проверка TypeScript/React-кода на ошибки и стиль.
+
+  - Stylelint — проверка SCSS-стилей на соответствие стандартам.
+
+  - Prettier — автоматическое форматирование кода для единообразия.
+
+- Для автоматизации процессов используются:
+
+  - Husky — настройка Git hooks, которые запускаются при коммитах.
+
+  - lint-staged — проверяет и форматирует только изменённые файлы перед коммитом.
+
+- Git hooks:
+  - При коммите код автоматически проверяется линтерами и форматируется.
+  - Ошибки не позволят выполнить коммит, если код не соответствует правилам.
+
+#### 📁 Стек проекта
+
+- React 19
+
+- TypeScript
+
+- SCSS-модули
+
+- Swiper — для слайдера событий
+
+- ESLint, Stylelint, Prettier, husky, lint-staged
+
+#### 📌 Заметки
+
+- Анимация и расчёты точек на круге реализованы вручную (тригонометрия).
+
+- Проект не использует сторонние UI-библиотеки — вся вёрстка кастомная.
+
+- Гибкая архитектура компонентов с четким разделением логики, анимации и визуального представления.
+
+[Демо](https://NatalyMaxi.github.io/historical-events)  
+[Ссылка на репозиторий](https://github.com/NatalyMaxi/historical-events)
