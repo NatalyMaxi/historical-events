@@ -1,0 +1,87 @@
+@use 'src/styles/helpers' as *;
+
+.section {
+  width: 100%;
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 3);
+  height: 100vh;
+  margin-inline: auto;
+  padding-inline: calc(var(--container-padding-x) * 2) var(--container-padding-x);
+
+  .container {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100vh;
+    padding-block: rem(170) rem(104);
+    border-right: var(--border-opacity);
+    border-left: var(--border-opacity);
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: var(--color-dark-opacity-10);
+    }
+
+    &::before {
+      top: 44.7%;
+      left: 0;
+      transform: translateY(-50%);
+
+      width: 100%;
+      height: rem(1);
+    }
+
+    &::after {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: rem(1);
+      height: 100%;
+    }
+  }
+}
+
+@include laptop {
+  .section {
+    .container {
+      padding-block: rem(90) rem(60);
+
+      &::before {
+        top: 38%;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .section {
+    max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+    padding-inline: var(--container-padding-x);
+
+    .container {
+      padding-block: rem(59) rem(13);
+    }
+  }
+}
+
+@include mobile {
+  .section {
+    max-width: 100%;
+    padding-inline: 0;
+
+    .container {
+      padding-block: rem(59) rem(13);
+      border: none;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

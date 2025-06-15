@@ -1,0 +1,157 @@
+@use 'src/styles/helpers' as *;
+
+.container {
+  $size: rem(536);
+
+  .wrapper {
+    @include fluid-text(200, 56);
+
+    position: relative;
+    left: rem(-1);
+
+    display: flex;
+    gap: rem(78);
+    align-items: center;
+  }
+
+  .yearsContainer {
+    position: absolute;
+    top: calc(43% - var(--line-height) / 2);
+    left: 15%;
+  }
+
+  .category {
+    display: none;
+  }
+
+  .circleWrapper {
+    position: absolute;
+    top: calc(45% - var(--diameter) / 2);
+    left: calc(50% - var(--diameter) / 2);
+
+    width: $size;
+    height: $size;
+
+    .svgCircle {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .point {
+      position: absolute;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .controls {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+
+    margin-block-start: auto;
+    padding-inline-start: rem(78);
+  }
+
+  .elem {
+    font-size: rem(14);
+    font-weight: 400;
+    line-height: 100%;
+  }
+
+  .buttonContainer {
+    display: flex;
+    gap: rem(20);
+    align-items: center;
+  }
+
+  .cards {
+    margin-block-start: rem(56);
+    padding-inline: rem(78);
+  }
+}
+
+@include laptop {
+  .container {
+    .wrapper {
+      gap: rem(40);
+    }
+
+    .controls {
+      padding-inline-start: rem(40);
+    }
+
+    .yearsContainer {
+      top: 29%;
+      left: 19%;
+    }
+
+    .circleWrapper {
+      top: calc(38% - var(--diameter) / 2);
+    }
+
+    .cards {
+      padding-inline: rem(40);
+    }
+  }
+}
+
+@include tablet {
+  .container {
+    .yearsContainer {
+      top: 33%;
+      left: 20%;
+    }
+  }
+}
+
+@include mobile {
+  .container {
+    .yearsContainer {
+      position: static;
+      margin-inline: var(--container-padding-x);
+      padding-block: rem(59) rem(25);
+      border-bottom: rem(1) solid #c7cdd9;
+    }
+
+    .category {
+      display: flex;
+      margin-top: 35px;
+    }
+
+    .wrapper {
+      padding-inline: var(--container-padding-x);
+    }
+
+    .line {
+      display: none;
+    }
+
+    .circleWrapper {
+      display: none;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: rem(10) rem(38);
+      order: 10;
+
+      width: max-content;
+      padding-inline: var(--container-padding-x);
+    }
+
+    .buttonContainer {
+      gap: rem(9);
+    }
+
+    .elem {
+      grid-column: 1 / span 2;
+    }
+
+    .cards {
+      margin-block-start: rem(20);
+      padding-inline: rem(0);
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@use 'src/styles/helpers' as *;
+
+.year {
+  display: inline-block;
+  font-weight: 400;
+  color: var(--accent-color-primary);
+
+  &.large {
+    @include fluid-text(200, 56);
+
+    font-weight: 700;
+    line-height: var(--line-height);
+    letter-spacing: -0.02em;
+  }
+
+  &.small {
+    @include fluid-text(25, 16);
+
+    font-family: var(--font-family-additional);
+    line-height: 120%;
+  }
+
+  &.blue {
+    color: var(--accent-color-primary);
+  }
+
+  &.violet {
+    color: #5d5fef;
+  }
+
+  &.pink {
+    color: var(--accent-color-secondary);
+  }
+}
+
+@include laptop {
+  .year {
+    &.large {
+      line-height: 100%;
+    }
+  }
+}

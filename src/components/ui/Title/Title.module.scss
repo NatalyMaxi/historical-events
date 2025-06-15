@@ -1,0 +1,9 @@
+@use 'src/styles/helpers' as *;
+
+.title {
+  @include fluid-text(56, 20);
+
+  font-weight: 700;
+  line-height: 120%;
+  text-align: left;
+}
