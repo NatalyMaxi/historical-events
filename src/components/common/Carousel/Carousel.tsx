@@ -7,14 +7,14 @@ import { EventCard, SwitchButton } from 'components';
 import { Direction, Event } from 'types';
 
 import 'swiper/css';
-
 import styles from './Carousel.module.scss';
 
 export interface ICarouselProps {
   events: Event[];
+  resetKey?: number | string;
 }
 
-export const Carousel = ({ events }: ICarouselProps) => {
+export const Carousel = ({ events, resetKey }: ICarouselProps) => {
   const id = useId();
 
   const nextButtonClass = `button-next-${id}`;
@@ -35,6 +35,7 @@ export const Carousel = ({ events }: ICarouselProps) => {
         isSliderControl
       />
       <Swiper
+        key={resetKey}
         className={styles.swiper}
         slidesPerView="auto"
         navigation={{

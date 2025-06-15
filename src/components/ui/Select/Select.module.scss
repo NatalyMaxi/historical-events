@@ -1,0 +1,20 @@
+@use 'src/styles/helpers' as *;
+
+.selectWrapper {
+  display: inline-block;
+  text-align: center;
+
+  .select {
+    cursor: pointer;
+
+    padding: rem(2) rem(4);
+    border: var(--border-opacity);
+    border-radius: 4px;
+
+    font-size: rem(12);
+    font-weight: 400;
+    color: var(--color-dark);
+
+    background-color: var(--color-light-main);
+  }
+}

@@ -7,6 +7,11 @@ export const HOTSPOT_ANGLE = 293;
 export const FULL_CIRCLE_DEGREES = 360;
 export const DEGREES_TO_RADIANS = Math.PI / 180;
 
+export const options = [2, 3, 4, 5, 6].map((num) => ({
+  label: `${num}`,
+  value: num,
+}));
+
 export const historicalEvents: Category[] = [
   {
     id: 1,

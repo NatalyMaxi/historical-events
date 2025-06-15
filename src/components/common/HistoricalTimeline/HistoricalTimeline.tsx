@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import {
   AnimatedPeriod,
@@ -63,6 +63,10 @@ export const HistoricalTimeline = ({ eventData }: IHistoricalTimelineProps) => {
   const targetYearMax =
     activeEvents.length > 0 ? Math.max(...activeEvents.map((e) => e.year)) : null;
 
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [eventData]);
+
   const handleClick = (clickedIndex: number) => {
     setCurrentIndex(clickedIndex);
   };
@@ -120,7 +124,7 @@ export const HistoricalTimeline = ({ eventData }: IHistoricalTimelineProps) => {
       </div>
 
       <div className={styles.cards}>
-        <Carousel events={activeEvents} />
+        <Carousel events={activeEvents} resetKey={activeIndex} />
       </div>
 
       <div className={styles.circleWrapper}>
