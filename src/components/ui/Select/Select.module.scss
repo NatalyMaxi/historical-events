@@ -11,10 +11,18 @@
     border: var(--border-opacity);
     border-radius: 4px;
 
-    font-size: rem(12);
+    font-size: rem(14);
     font-weight: 400;
     color: var(--color-dark);
 
     background-color: var(--color-light-main);
+  }
+}
+
+@include mobile {
+  .selectWrapper {
+    .select {
+      font-size: rem(12);
+    }
   }
 }
