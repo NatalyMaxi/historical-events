@@ -1,11 +1,12 @@
 import { HistoricalTimeline } from 'components';
+import { historicalEvents } from 'utils/constants';
 
 import styles from './App.module.scss';
 
 const App = () => {
   return (
     <div className={styles.app}>
-      <HistoricalTimeline data={['1', '1', '1', '1', '1', '1']} />
+      <HistoricalTimeline eventData={historicalEvents} />
     </div>
   );
 };

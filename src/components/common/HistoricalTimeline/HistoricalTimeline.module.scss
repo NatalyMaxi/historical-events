@@ -33,37 +33,35 @@
       top: 0;
       left: 0;
     }
+
+    .point {
+      position: absolute;
+      transform: translate(-50%, -50%);
+    }
   }
 
   .controls {
     display: flex;
-    gap: rem(10);
+    flex-direction: column;
+    gap: rem(20);
     margin-top: auto;
+  }
 
-    .button {
-      cursor: pointer;
+  .elem {
+    font-size: rem(14);
+    font-weight: 400;
+    line-height: 100%;
+  }
 
-      padding: rem(8) rem(16);
-      border: rem(1) solid #ccc;
-      border-radius: rem(4);
-
-      font-weight: 600;
-
-      background-color: white;
-
-      transition: background-color 0.2s;
-
-      &:hover {
-        background-color: #eee;
-      }
-    }
+  .buttonContainer {
+    display: flex;
+    gap: rem(20);
+    align-items: center;
   }
 }
 
 @include laptop {
   .container {
-    $size: rem(500);
-
     .wrapper {
       gap: rem(40);
     }
@@ -81,8 +79,6 @@
 
 @include tablet {
   .container {
-    $size: rem(536);
-
     .yearsContainer {
       top: 33%;
       left: 20%;
@@ -105,6 +101,21 @@
 
     .circleWrapper {
       display: none;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: rem(10) rem(38);
+      width: max-content;
+    }
+
+    .buttonContainer {
+      gap: rem(9);
+    }
+
+    .elem {
+      grid-column: 1 / span 2;
     }
   }
 }

@@ -22,6 +22,11 @@
     background-color: var(--color-light-bright);
   }
 
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
   .icon {
     width: var(--size);
     height: var(--size);

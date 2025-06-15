@@ -5,6 +5,7 @@
   --color-light-bright: #fff;
   --color-dark: #42567a;
   --color-dark-opacity-10: #42567a1a;
+  --color-dark-opacity-50: #303e5880;
   --accent-color-primary: #3877ee;
   --accent-color-secondary: #f178b6;
 
@@ -26,12 +27,10 @@
 
   @include laptop {
     --container-padding-x: 6%;
-    --diameter: #{rem(500)};
   }
 
   @include tablet {
     --container-padding-x: #{rem(32)};
-    --diameter: #{rem(536)};
   }
 
   @include mobile {

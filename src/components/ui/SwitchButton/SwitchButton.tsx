@@ -1,3 +1,4 @@
+import { ButtonHTMLAttributes } from 'react';
 import classNames from 'classnames';
 
 import { ReactComponent as ArrowIcon } from 'assets/svg/arrow-icon.svg';
@@ -5,12 +6,13 @@ import { Direction } from 'types';
 
 import styles from './SwitchButton.module.scss';
 
-interface IButtonProps {
+interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isSliderControl?: boolean;
   onClick?: () => void;
   className?: string;
   direction: Direction;
   title?: string;
+  isDisabled: boolean;
 }
 
 export const SwitchButton = ({
@@ -19,6 +21,8 @@ export const SwitchButton = ({
   className,
   direction,
   title,
+  isDisabled,
+  ...props
 }: IButtonProps) => {
   const isNext = direction === Direction.NEXT;
 
@@ -33,6 +37,8 @@ export const SwitchButton = ({
       type="button"
       title={title ?? ''}
       onClick={onClick}
+      {...props}
+      disabled={isDisabled}
     >
       <ArrowIcon className={styles.icon} />
     </button>

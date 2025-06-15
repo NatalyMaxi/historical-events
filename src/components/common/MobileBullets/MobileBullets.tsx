@@ -1,9 +1,11 @@
 import classNames from 'classnames';
 
+import { Category } from 'types';
+
 import styles from './MobileBullets.module.scss';
 
 export interface IMobileBulletsProps {
-  data: any;
+  data: Category[];
   activeIndex: number;
   handleClick: (i: number) => void;
   className?: string;
@@ -17,7 +19,7 @@ export const MobileBullets = ({
 }: IMobileBulletsProps) => {
   return (
     <ul className={styles.bullets}>
-      {data.map((item: any, i: any) => (
+      {data.map((item, i) => (
         <li
           key={i}
           className={classNames(styles.bullet, { [styles.active]: i === activeIndex, className })}
