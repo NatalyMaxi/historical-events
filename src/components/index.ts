@@ -6,5 +6,7 @@ export * from './ui/Point';
 export * from './ui/SwitchButton';
 export * from './ui/Title';
 export * from './common/AnimatedPeriod';
+export * from './common/Carousel';
+export * from './common/EventCard';
 export * from './common/HistoricalTimeline';
 export * from './common/MobileBullets';

@@ -12,7 +12,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   direction: Direction;
   title?: string;
-  isDisabled: boolean;
+  isDisabled?: boolean;
 }
 
 export const SwitchButton = ({

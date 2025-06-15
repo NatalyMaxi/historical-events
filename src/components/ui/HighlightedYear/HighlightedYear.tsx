@@ -6,7 +6,7 @@ export interface IHighlightedYearProps {
   year: number;
   className?: string;
   size?: 'large' | 'small';
-  color?: 'blue' | 'pink';
+  color?: 'blue' | 'pink' | 'violet';
 }
 
 export const HighlightedYear = ({

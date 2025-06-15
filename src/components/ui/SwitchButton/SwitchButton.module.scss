@@ -20,6 +20,10 @@
     --size: #{rem(40)};
 
     background-color: var(--color-light-bright);
+
+    &:disabled {
+      display: none;
+    }
   }
 
   &:disabled {

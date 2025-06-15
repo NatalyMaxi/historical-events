@@ -1,5 +1,8 @@
+import { useMemo, useState } from 'react';
+
 import {
   AnimatedPeriod,
+  Carousel,
   Circle,
   ColoredLine,
   Container,
@@ -10,6 +13,8 @@ import {
 } from 'components';
 
 import { Category, Direction } from 'types';
+import { useAnimatedValue } from 'hooks/useAnimatedValue';
+import { padSingleDigit } from 'helpers/padSingleDigit';
 import {
   DEGREES_TO_RADIANS,
   FULL_CIRCLE_DEGREES,
@@ -19,9 +24,6 @@ import {
 } from 'utils/constants';
 
 import styles from './HistoricalTimeline.module.scss';
-import { useAnimatedValue } from 'hooks/useAnimatedValue';
-import { useMemo, useState } from 'react';
-import { padSingleDigit } from 'helpers/padSingleDigit';
 
 export interface IHistoricalTimelineProps {
   eventData: Category[];
@@ -54,6 +56,8 @@ export const HistoricalTimeline = ({ eventData }: IHistoricalTimelineProps) => {
   }, [eventData, currentAngleOffset, angleStep]);
 
   const activeEvents = eventData[activeIndex]?.events ?? [];
+  const activeCategory = eventData[activeIndex]?.name ?? '';
+
   const targetYearMin =
     activeEvents.length > 0 ? Math.min(...activeEvents.map((e) => e.year)) : null;
   const targetYearMax =
@@ -84,13 +88,16 @@ export const HistoricalTimeline = ({ eventData }: IHistoricalTimelineProps) => {
           даты
         </Title>
       </div>
+
       <div className={styles.yearsContainer}>
         <AnimatedPeriod
           startPeriod={targetYearMin}
           endPeriod={targetYearMax}
           duration={TOTAL_ANIMATION_DURATION}
         />
+        <span className={styles.category}>{activeCategory}</span>
       </div>
+
       <div className={styles.controls}>
         <span className={styles.elem}>
           {`${padSingleDigit(activeIndex + 1)}/${padSingleDigit(numPoints)}`}
@@ -111,6 +118,11 @@ export const HistoricalTimeline = ({ eventData }: IHistoricalTimelineProps) => {
         </div>
         <MobileBullets data={eventData} activeIndex={activeIndex} handleClick={handleClick} />
       </div>
+
+      <div className={styles.cards}>
+        <Carousel events={activeEvents} />
+      </div>
+
       <div className={styles.circleWrapper}>
         <Circle radius={RADIUS} className={styles.svgCircle} />
         {pointsWithPositions.map(({ eventCategory, x, y, index }) => {
@@ -124,6 +136,7 @@ export const HistoricalTimeline = ({ eventData }: IHistoricalTimelineProps) => {
               style={{ left: x, top: y }}
               onClick={() => handleClick(index)}
               title={eventCategory.name}
+              eventCategory={eventCategory.name}
             >
               {index + 1}
             </Point>

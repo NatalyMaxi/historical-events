@@ -16,7 +16,7 @@ export const AnimatedPeriod = ({ startPeriod, endPeriod, duration }: IAnimatedPe
 
   return (
     <div className={classNames(styles.container)}>
-      {animatedStart && <HighlightedYear year={animatedStart} size="large" color="blue" />}
+      {animatedStart && <HighlightedYear year={animatedStart} size="large" color="violet" />}
       {animatedEnd && <HighlightedYear year={animatedEnd} size="large" color="pink" />}
     </div>
   );

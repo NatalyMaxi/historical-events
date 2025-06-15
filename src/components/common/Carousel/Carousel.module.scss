@@ -1,0 +1,47 @@
+@use 'src/styles/helpers' as *;
+
+.carousel {
+  position: relative;
+
+  .swiperSlide {
+    width: max-content;
+  }
+
+  .button {
+    position: absolute;
+    z-index: 2;
+    top: rem(40);
+  }
+
+  .buttonNext {
+    right: rem(-60);
+  }
+
+  .buttonPrev {
+    left: rem(-60);
+  }
+}
+
+@include tablet {
+  .carousel {
+    .buttonNext {
+      right: rem(-60);
+    }
+
+    .buttonPrev {
+      left: rem(-60);
+    }
+  }
+}
+
+@include mobile {
+  .carousel {
+    .swiper {
+      padding-inline: var(--container-padding-x);
+    }
+
+    .button {
+      display: none;
+    }
+  }
+}

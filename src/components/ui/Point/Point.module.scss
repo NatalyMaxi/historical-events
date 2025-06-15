@@ -3,6 +3,8 @@
 .point {
   cursor: pointer;
 
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,6 +31,7 @@
 
     width: rem(56);
     height: rem(56);
+    border: rem(1) solid var(--color-dark-opacity-50);
 
     font-size: rem(20);
 
@@ -38,5 +41,29 @@
   &.active {
     pointer-events: none;
     cursor: default;
+  }
+
+  .category {
+    position: absolute;
+    z-index: 0;
+
+    display: inline-block;
+
+    margin-inline-start: rem(0);
+
+    font-size: rem(20);
+    font-weight: 700;
+    line-height: rem(30);
+    color: transparent;
+
+    transition: margin-inline-start 1s ease-in-out;
+    transition-delay: 0.2s;
+
+    &.active {
+      margin-inline-start: rem(170);
+      color: var(--color-dark);
+      transition: color 0.2s ease-in-out;
+      transition-delay: 0.3s;
+    }
   }
 }

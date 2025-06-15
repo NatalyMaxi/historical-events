@@ -22,3 +22,14 @@
   color: inherit;
   background-color: inherit;
 }
+
+@mixin text-ellipsis($lines: 1, $width: 100%) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+
+  width: $width;
+
+  text-overflow: ellipsis;
+}

@@ -7,21 +7,16 @@ export interface IPointProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   children: ReactNode;
   isActive: boolean;
+  eventCategory: string;
 }
 
-export const Point = ({ isActive, children, className, ...props }: IPointProps) => {
+export const Point = ({ isActive, children, eventCategory, className, ...props }: IPointProps) => {
   return (
-    <div
-      className={classNames(
-        styles.point,
-        {
-          [styles.active]: isActive,
-        },
-        className,
-      )}
-      {...props}
-    >
+    <div className={classNames(styles.point, isActive && styles.active, className)} {...props}>
       {children}
+      <span className={classNames(styles.category, isActive && styles.active)}>
+        {eventCategory}
+      </span>
     </div>
   );
 };
